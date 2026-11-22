@@ -1,0 +1,8 @@
+**/node_modules/
+app/dist/
+**/*.tsbuildinfo
+**/*.log
+evidence/
+test-results/
+.env
+.env.*

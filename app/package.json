@@ -1,0 +1,29 @@
+{
+  "name": "from-zero-to-reality-v4",
+  "private": true,
+  "version": "4.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5184",
+    "build": "vue-tsc -b && vite build && node scripts/package.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "start": "node scripts/serve.mjs",
+    "test:e2e": "node tests/acceptance.cjs",
+    "record:tcl": "node tests/record.cjs",
+    "record:full": "node tests/record.cjs --full",
+    "record:intro": "node tests/record.cjs --intro"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "three": "^0.181.0",
+    "vue": "^3.5.24"
+  },
+  "devDependencies": {
+    "@types/three": "^0.181.0",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "playwright": "^1.62.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.2",
+    "vue-tsc": "^3.1.4"
+  }
+}
