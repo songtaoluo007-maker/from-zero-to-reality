@@ -291,6 +291,8 @@
   .fact p{font-size:.86rem;line-height:1.8}
   .phi-tag{border:0;background:none;box-shadow:none;border-radius:0;transform:none;padding:0}
   .phi-tag::after{display:none}
+  .phi-tag .sub{line-height:1.55;letter-spacing:.02em}
+  .example-label{display:block;color:var(--gold);margin:.35rem 0 .15rem}
   .flow{gap:.7rem;margin-top:1.8rem}
   .flow .step{border:0;background:none;border-radius:0;padding:0;color:var(--paper-dim);font-size:.88rem}
   .flow .arr{font-size:.7rem;opacity:.7}
@@ -298,6 +300,7 @@
   .plan{border:0;background:none;border-radius:0;padding:0}
   .plan h3{font-weight:400;font-size:.72rem;letter-spacing:.22em;margin-bottom:.65rem}
   .plan p{font-size:.9rem;color:var(--paper-dim);white-space:nowrap}
+  .role-intent{margin:1.4rem 0 0;max-width:40rem;color:var(--paper-dim);font-size:clamp(.8rem,1.2vw,1rem);line-height:1.65}
   .finale{margin-top:2.2rem}
   .finale .en{font-size:.68rem;letter-spacing:.28em}
   .finale .thanks{font-size:.9rem;letter-spacing:.08em}
@@ -322,6 +325,7 @@
     .fact p{font-size:.76rem;line-height:1.6}
     .plans{grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
     .plan p{font-size:.7rem;white-space:normal}
+    .role-intent{margin-top:1rem}
     .flow{gap:.45rem .55rem;max-width:90%}
     .flow .step{font-size:.74rem}
     .phi-tag{margin-top:1.6rem}
@@ -362,8 +366,11 @@
   </section>
   <section class="panel" data-panel="1" aria-label="案例一 TCL 工业识别">
     <h2 class="title">每一个尺寸<br>都能回到<span class="gold">原图</span></h2>
-    <p class="takeaway">TCL 工业图纸识别<br><span class="supporting">来源追溯 · 错例校验 · 结构化输出</span></p>
-    <div class="phi-tag" aria-label="模拟错例"><div class="big">φ240 <em>≠</em> φ24.0</div><div class="sub">第 2 页 · 球标 07</div></div>
+    <p class="takeaway">TCL 工业图纸识别<br><span class="supporting">我负责球标定位、尺寸匹配和可回查 CSV 输出</span></p>
+    <div class="phi-tag" aria-label="模拟错例与输出">
+      <div class="big">φ240 <em>≠</em> φ24.0</div>
+      <div class="sub"><span class="example-label">模拟输出</span> 第 2 页 · 球标 07 · φ24.0 · 区域 ROI-07</div>
+    </div>
     <p class="boundary">合成图纸 · 方案验证阶段</p>
   </section>
   <section class="panel" data-panel="2" aria-label="案例二 基金桌面交付">
@@ -381,6 +388,7 @@
   <section class="panel" data-panel="4" aria-label="终章 职业规划">
     <h2 class="title">从构想<br>到<span class="gold">现实</span></h2>
     <div class="plans"><div class="plan"><h3>NOW</h3><p>夯实工程基础</p></div><div class="plan"><h3>NEXT</h3><p>独立负责 AI 模块</p></div><div class="plan"><h3>FUTURE</h3><p>推动业务交付</p></div></div>
+    <p class="role-intent">我希望从一个具体的 AI 功能做起，把需求拆解、接口联调和结果验证一起做扎实。</p>
     <div class="finale"><div class="en">FROM ZERO TO REALITY</div><div class="thanks">谢谢各位面试官</div></div>
   </section>
 </div>
@@ -447,7 +455,7 @@
       script:"各位面试官好，我是罗松涛，深圳职业技术大学人工智能学院软件技术专业，2027 届，预计明年六月毕业。我考取了华为 HCIP-AI 的两项认证和 HarmonyOS 高级开发者认证。在校期间我担任过学院志愿者联合会副会长、十五运志愿者大队长，协助统筹约一百二十名志愿者，之前还有两年服役经历。接下来，我用三个真实做过的项目，介绍我从想法到交付的完整过程。",
       dur:"约 40 秒" },
     { name:"TCL · 工业识别", vid:1, scriptTitle:"案例一 · TCL 工业图纸识别",
-      script:"第一个案例来自 TCL 工业研究院实习，做的是 IQC 工程图纸识别。比如 φ240 和 φ24.0，识别出错需要回到原图复核。所以我用 PyMuPDF 拆解图纸、RapidOCR 做识别，重点不在识别本身，而在校验：每个结果都保留页码、球标和来源区域，能回到原图核对。这部分代码已经并入团队仓库，目前处于方案验证阶段。",
+      script:"第一个案例是我在 TCL 工业研究院实习时参与的 IQC 图纸识别。我负责球标定位、尺寸匹配和可回查的 CSV 输出。以画面里的模拟错例为例，如果 OCR 把 φ24.0 读成 φ240，就回到第 2 页、球标 07 对应的区域核对原图。确认后，结果里同时保留页码、球标、尺寸和来源区域，下次还能找到这条记录的出处。相关代码已合入团队仓库，项目目前仍处于方案验证阶段。",
       dur:"约 42 秒" },
     { name:"基金 · 桌面交付", vid:2, scriptTitle:"案例二 · 基金智能分析应用",
       script:"第二个案例是一个基金智能分析的 Windows 应用。它从一张持仓截图开始，经过 OCR 识别、FastAPI 接口、AI 分析，再用 SQLite 把结果留存下来，最后用 PyInstaller 打包成能装到别人电脑上的安装包。这个项目让我第一次走完从需求到交付的完整链路。需要说明的是，它用的是模拟数据，没有验证过投资收益，定位是工具原型，不是投资建议。",
@@ -456,7 +464,7 @@
       script:"第三个案例是城市积水预警的边云联调原型，叫预鉴。真实场景里边缘设备经常断网，所以我设计了 Outbox 缓存：断网时数据先存在本地，网络恢复后自动补传；每条事件带 eventId 做幂等，重复上传也不会重复处理；最终处置环节保留人工确认。它目前是模拟联调原型，没有接入真实雷达，也没有实地部署，这一点我先讲清楚。",
       dur:"约 38 秒" },
     { name:"终章 · 职业规划", vid:0, scriptTitle:"终章 · 职业规划",
-      script:"最后是我的职业规划。短期，我想先成为一名合格可靠的 AI 全栈开发工程师，把前后端、数据库、Linux 和工程交付补扎实；中期，希望能独立承担一个完整的 AI 应用模块，理解从需求到上线的每个环节；长期，把 AI 和具体行业深入结合，成为既懂技术、也理解业务的工程师。从构想，到现实，这是我给自己的要求。谢谢各位面试官。",
+      script:"如果有机会加入，我希望从一个具体的 AI 功能做起，把需求拆解、接口联调和结果验证一起做扎实。短期先补实前后端和工程基础，中期独立负责一个完整的 AI 应用模块，长期希望把技术和行业业务结合起来，推动系统交付。从构想到现实，谢谢各位面试官。",
       dur:"约 30 秒" }
   ];
   var TOTAL_LABEL = "03:10";
