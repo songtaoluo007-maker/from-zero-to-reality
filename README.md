@@ -4,6 +4,8 @@
 
 **在线观看：https://songtaoluo007-maker.github.io/from-zero-to-reality/**
 
+**Muse 背景精简版：https://songtaoluo007-maker.github.io/from-zero-to-reality/muse/**
+
 网页无需登录。建议使用桌面 Chrome / Edge；滚轮控制镜头，空格播放或暂停，R 倒放，数字 1–5 跳转章节，F 全屏。H 打开操作菜单，P 个人履历，N 讲稿，E 项目证据，L 性能模式。大标题不带标点，不显示常驻播放进度。
 
 ## 离线演示
